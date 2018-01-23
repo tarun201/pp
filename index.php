@@ -67,7 +67,7 @@ $core_course=mysqli_fetch_array($result_course);
       </div>
       <div class="col-md-6 text-center ">
         <h3>Presidency University,Bengaluru</h3>
-        <h4>School Of Engineering</h4>
+        <h4>School of Engineering</h4>
         <h4>Industrial Practice Division</h4>
       </div>
     </div>
@@ -93,9 +93,6 @@ $core_course=mysqli_fetch_array($result_course);
           <li class="nav-item">
             <a class="nav-link" href="login.php">Login</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="register.php">Register</a>
-          </li>
         </ul>
       </div>
     </div>
@@ -114,28 +111,26 @@ $core_course=mysqli_fetch_array($result_course);
   <div class="container">
     <div class="row">
       <div class="col-md-4 form-group">
-        <label for="">ID Number:</label>
-        <input type="text" name="" value="<?php  echo $clg_dtls['student_id']?>"  disabled="">
+        <label class="font-weight-bold">ID Number:</label>
+        <input type="text" class="form-control-plaintext" value="<?php  echo $clg_dtls['student_id']?>" >
       </div>
       <div class="col-md-4 form-group">
-        <label for="">Name:</label>
-        <input type="text"  name="" value="<?php  echo $clg_dtls['name']?>" disabled="">
+        <label class="font-weight-bold">Name:</label>
+        <input type="text"  class="form-control-plaintext" value="<?php  echo $clg_dtls['name']?>">
       </div>
       <div class="col-md-4 form-group">
-        <label for="">Branch:</label>
-        <input type="text"  name="" value="<?php  echo $clg_dtls['branch_name']?>" disabled="">
+        <label class="font-weight-bold">Branch:</label>
+        <input type="text"  class="form-control-plaintext" value="<?php  echo $clg_dtls['branch_name']?>">
       </div>
-    </div>
-    <div class="row">
 
+    </div>
+
+    <div class="row">
       <div class="col-md-4 form-group">
-        <label for="">CGPA:</label>
-        <input type="text"  id="" name="" value="<?php  echo $clg_dtls['cgpa']?>" disabled>
+        <label class="font-weight-bold">CGPA:</label>
+        <input type="text"  class="form-control-plaintext" value="<?php  echo $clg_dtls['cgpa']?>">
       </div>
-      <div class="col-md-4 form-group">
-        <label for="">DOB:</label>
-        <input type="date"  name="" value="<?php  echo $clg_dtls['dob']?>" disabled="">
-      </div>
+
     </div>
     <hr>
     <h5 class="font-weight-bold">On Campus Core Courses Details:</h5>
@@ -212,15 +207,31 @@ $core_course=mysqli_fetch_array($result_course);
         <textarea class="form-control" rows="2" id="address" name="address" placeholder="<?php  echo $clg_dtls['address']?>" required></textarea>
       </div>
 
-      <div class="form-group row">
-        <div class="form-group col-md-6">
-          <label for="mobile_num">Mobile Number:<span class="text-danger">*</span> </label>
-          <input type="text" id="mobile_num" name="mobile_num" value="<?php  echo $clg_dtls['mobile_num']?>" required>
+      <div class=" form-group">
+        <label for="">DOB:</label>
+        <input type="date" class="form-control" name="dob" required="">
+      </div>
+
+      <div class="form-group">
+        <div class="input-group">
+            <span class="input-group-addon">Mobile Number:<span class="text-danger">*</span></span>
+          <input type="text" class="form-control" name="cc1" placeholder="Country code" maxlength="3" required>
+          <input type="text" class="form-control" id="mobile_num" name="mobile_num" value="<?php  echo $clg_dtls['mobile_num']?>" maxlength="10" required>
         </div>
-        <div class="form-group col-md-4">
-          <label for="bg">Blood Group:<span class="text-danger">*</span></label>
-          <input type="text" id="bg" name="bg" value="<?php  echo $clg_dtls['blood_group']?>" required>
-        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="bg">Blood Group:<span class="text-danger">*</span></label>
+        <select class="form-control" name="bg" id="bg" required>
+          <option value="A+">A+</option>
+          <option value="A-">A-</option>
+          <option value="B+">B+</option>
+          <option value="B-">B-</option>
+          <option value="AB+">AB+</option>
+          <option value="AB-">AB-</option>
+          <option value="O+">O+</option>
+          <option value="O-">O-</option>
+        </select>
       </div>
 
       <div class="form-group">
@@ -232,8 +243,11 @@ $core_course=mysqli_fetch_array($result_course);
         <input type="text" id="relation" class="form-control" name="relation" placeholder="Enter relation with the Person.." required>
       </div>
       <div class="form-group">
-        <label for="e_number">Emergency Number:<span class="text-danger">*</span></label>
-        <input type="text" id="e_number" class="form-control" name="e_number" placeholder="Enter the Person's Number.." required>
+        <div class="input-group">
+          <span class="input-group-addon">Emergency Number:<span class="text-danger">*</span></span>
+          <input type="text" class="form-control" name="cc2" placeholder="Country code" maxlength="3" required>
+          <input type="text" id="e_number" class="form-control" name="e_number" placeholder="Enter the Person's Number.." maxlength="10" required>
+        </div>
       </div>
       <div class="form-group">
         <label for="skills">Technical/Software Skills(If any)(Seperate Using comma(,)):</label>

@@ -30,15 +30,14 @@ if(isset($_POST['submit']))
   }
   $id='2015CSE1';
   $address=$_POST['address'];
+  $dob=$_POST['dob'];
   $email_id=$_POST['email_id'];
   $e_person=$_POST['e_person'];
-  echo $e_number=$_POST['e_number'];
   $relation=$_POST['relation'];
-  echo $mobile_num=$_POST['mobile_num'];
   $bg=$_POST['bg'];
 
-  $fill_details="insert into student_details values('$id','$address','$email_id',$mobile_num,
-                  '$bg',$e_number,'$e_person','$relation','$skills','$lang','$other')";
+  $fill_details="insert into student_details values('$id','$address','$dob','$email_id',concat('$_POST[cc1]','-','$_POST[mobile_num]'),
+                  '$bg',concat('$_POST[cc2]','-','$_POST[e_number]'),'$e_person','$relation','$skills','$lang','$other')";
   $result_details=mysqli_query($dbc,$fill_details) or die("error");
   echo "Succesful";
 
