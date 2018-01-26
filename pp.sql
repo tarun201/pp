@@ -113,9 +113,9 @@ CREATE TABLE `student_details` (
   `address` varchar(100) DEFAULT NULL,
   `dob` date DEFAULT NULL,
   `email_id` varchar(50) DEFAULT NULL,
-  `mobile_num` varchar(13) DEFAULT NULL,
+  `mobile_num` varchar(15) DEFAULT NULL,
   `blood_group` varchar(3) DEFAULT NULL,
-  `emergency_num` varchar(13) DEFAULT NULL,
+  `emergency_num` varchar(15) DEFAULT NULL,
   `emergency_person` varchar(50) DEFAULT NULL,
   `relation` varchar(20) DEFAULT NULL,
   `skills` varchar(300) DEFAULT NULL,
@@ -142,4 +142,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-01-23 22:32:30
+-- Dump completed on 2018-01-26 16:46:53

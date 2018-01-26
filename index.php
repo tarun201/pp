@@ -22,7 +22,7 @@ $core_course=mysqli_fetch_array($result_course);
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Index</title>
+  <title>Student Profile</title>
   <!-- Latest compiled and minified CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
 
@@ -35,29 +35,12 @@ $core_course=mysqli_fetch_array($result_course);
   <!-- Latest compiled JavaScript -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
 
-  <style media="screen">
+  <!-- JavaScript for this page -->
+  <script src="assets/js/sp.js">  </script>
 
-  h5{
-    margin-top: 30px;
-    margin-bottom: 30px;
+  <!--  CSS for this page -->
+  <link rel="stylesheet" href="assets/css/sp.css">
 
-  }
-  h2{
-
-  }
-  img.logo{
-    width: 40%;
-  }
-  img.img-thumbnail{
-    width:40%;
-  }
-  nav{
-    background-color: #283955;
-  }
-  footer{
-    background-color: #283955;
-  }
-  </style>
 </head>
 <body>
   <div class="container-fluid mb-2 mt-2">
@@ -197,7 +180,7 @@ $core_course=mysqli_fetch_array($result_course);
 
   <div class="container">
     <h5 class="font-weight-bold">Enter Your Details Here: <small>(<span class="text-danger"> *</span> means <mark>required</mark> feild )</small></h5>
-    <form method="post" action="submission.php" >
+    <form name="myform" method="post" action="submission.php" onsubmit="return(validate());" >
       <div class="form-group ">
         <label for="email_id">Email-ID: <span class="text-danger">*</span></label>
         <input type="email" id="email_id" class="form-control" name="email_id"  value="<?php  echo $clg_dtls['email_id']?>" required>
@@ -214,15 +197,17 @@ $core_course=mysqli_fetch_array($result_course);
 
       <div class="form-group">
         <div class="input-group">
-            <span class="input-group-addon">Mobile Number:<span class="text-danger">*</span></span>
-          <input type="text" class="form-control" name="cc1" placeholder="Country code" maxlength="3" required>
+            <span id="mobile_error" class="input-group-addon">Mobile Number:<span class="text-danger">*</span></span>
+          <input type="text" class="form-control" name="cc1" placeholder="Country code" maxlength="4" required>
           <input type="text" class="form-control" id="mobile_num" name="mobile_num" value="<?php  echo $clg_dtls['mobile_num']?>" maxlength="10" required>
         </div>
       </div>
 
       <div class="form-group">
         <label for="bg">Blood Group:<span class="text-danger">*</span></label>
+        <span id="bg_error" class="d-none">Select your Blood Group</span>
         <select class="form-control" name="bg" id="bg" required>
+          <option value="1" selected>Select..</option>
           <option value="A+">A+</option>
           <option value="A-">A-</option>
           <option value="B+">B+</option>
@@ -244,8 +229,8 @@ $core_course=mysqli_fetch_array($result_course);
       </div>
       <div class="form-group">
         <div class="input-group">
-          <span class="input-group-addon">Emergency Number:<span class="text-danger">*</span></span>
-          <input type="text" class="form-control" name="cc2" placeholder="Country code" maxlength="3" required>
+          <span id="e_mob_error" class="input-group-addon">Emergency Number:<span class="text-danger">*</span></span>
+          <input type="text" class="form-control" name="cc2" placeholder="Country code" maxlength="4" required>
           <input type="text" id="e_number" class="form-control" name="e_number" placeholder="Enter the Person's Number.." maxlength="10" required>
         </div>
       </div>
