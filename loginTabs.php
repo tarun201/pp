@@ -69,7 +69,7 @@
                   <a class="nav-link active" data-toggle="tab" href="#Student" role="tab">Student</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" data-toggle="tab" href="#Company" role="tab">Comapny</a>
+                  <a class="nav-link" data-toggle="tab" href="#Admin" role="tab">Admin</a>
                 </li>
               </ul>
 
@@ -91,12 +91,12 @@
                 </div>
 
                 <!-- COMPANY LOGIN -->
-                <div id="Company" class="tab-pane fade" role="tabpanel">
+                <div id="Admin" class="tab-pane fade" role="tabpanel">
                   <br>
                   <form action="login.php" method="post">
-                    <input type="hidden" name="role" value="CompanyLogin"/>
+                    <input type="hidden" name="role" value="AdminLogin"/>
                     <label for="Username" style="text-align:left">Username </label>
-                    <input class="form-control" type="text" name="Username" placeholder="Company ID">
+                    <input class="form-control" type="text" name="Username" placeholder="Admin ID">
                     <br>
                     <label for="Password">Password </label>
                     <input class="form-control" type="password" name="Password" placeholder="Password">
