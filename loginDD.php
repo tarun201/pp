@@ -68,7 +68,7 @@
                 <label>User:</label>
                 <select name="role" class="form-control">
                         <option value="login" selected>Student</option>
-                        <option value="Company">Company</option>
+                        <option value="AdminLogin">Admin</option>
                 </select>
                 <br />
                 <label for="Username" style="text-align:left">Username </label>
