@@ -16,6 +16,29 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
+-- Table structure for table `AdminLogin`
+--
+
+DROP TABLE IF EXISTS `AdminLogin`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `AdminLogin` (
+  `id` varchar(10) DEFAULT NULL,
+  `password` varchar(50) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `AdminLogin`
+--
+
+LOCK TABLES `AdminLogin` WRITE;
+/*!40000 ALTER TABLE `AdminLogin` DISABLE KEYS */;
+INSERT INTO `AdminLogin` VALUES ('admin1','1234');
+/*!40000 ALTER TABLE `AdminLogin` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `college_std_dtls`
 --
 
@@ -85,9 +108,9 @@ DROP TABLE IF EXISTS `login`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `login` (
-  `student_id` varchar(10) NOT NULL,
+  `id` varchar(10) NOT NULL,
   `password` int(25) DEFAULT NULL,
-  PRIMARY KEY (`student_id`)
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -130,6 +153,7 @@ CREATE TABLE `student_details` (
 
 LOCK TABLES `student_details` WRITE;
 /*!40000 ALTER TABLE `student_details` DISABLE KEYS */;
+INSERT INTO `student_details` VALUES ('2015CSE1','zc','2018-01-15','CSE1@gmail.com','1-1290034581','B+','12-1234567888','sa','as','a','nothing extra','nothing extra');
 /*!40000 ALTER TABLE `student_details` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -142,4 +166,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-01-26 16:46:53
+-- Dump completed on 2018-01-28 20:57:10
