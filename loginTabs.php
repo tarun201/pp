@@ -1,3 +1,51 @@
+<?php
+session_start();
+if(!isset($_SESSION['logged_in']))
+{
+  $_SESSION['logged_in']=0;
+}
+
+
+include 'connection.php';
+$form_username = isset($_POST['Username']) ? $_POST['Username'] : '';
+$form_password = isset($_POST['Password']) ? $_POST['Password'] : '';
+$table_name = isset($_POST['role']) ? $_POST['role'] : '';
+$_SESSION['Username']=$form_username;
+$_SESSION['role']=$table_name;
+
+if(!empty($_POST['Username']))
+{
+  $query = "SELECT * FROM $table_name where id ='$form_username' and password='$form_password'";
+
+  $result = mysqli_query($dbc, $query) or die("Failed to query from database. You are not eligible for industry practice");
+  //COMMENT LINE BELOW IF USING 'loginTabs.php'
+  $row = mysqli_fetch_array($result) or die(header('location:loginTabs.php?err=1'));
+  //COMMENT THE LINE BELOW IF USING 'loginDD.php'
+  // $row = mysqli_fetch_array($result) or die(header('location:loginTabs.php?err=1'));
+
+  if(!empty($row['id']) && !empty($row['password']))
+  {
+    if($_SESSION['Username']==$row['id'] && $form_password == $row['password'])
+    {
+      $_SESSION['logged_in']=1;
+      if(isset($table_name)&& $table_name=='login')
+      {
+        header('location: index.php');
+      }
+      elseif(isset($table_name)&& $table_name=='AdminLogin')
+      {
+        header('location: conrec.php');
+      }
+      // elseif(isset($table_name)&& $table_name=='teachers_login')
+      //     header('location:index.html');
+    }
+    else {
+      header('location:loginTabs.php?err=1');
+    }
+  }
+}
+?>
+
 <!DOCTYPE html>
 <html>
 
@@ -9,6 +57,8 @@
   <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.css">
   <script src="assets/js/jquery.min.js"></script>
   <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+
+
 </head>
 
 <body>
@@ -37,12 +87,9 @@
               </a>
             </li>
             <li class="nav-item active">
-              <a class="nav-link" href="login.php">Login
+              <a class="nav-link" href="loginTabs.php">Login
 
                 <span class="sr-only">(current)</span></a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="register.php">Register</a>
               </li>
             </ul>
           </div>
@@ -51,15 +98,15 @@
       <div class="jumbotron">
         <fieldset>
           <center><legend>Login </legend></center><?php
-          $errors=array(1=>"Invalid username and password, try again.",2=>"Please login to access this area");
+          $errors=array(1=>"Invalid username or password, try again.",2=>"Please login to access this area");
           $error_id=isset($_GET['err'])?(int)$_GET['err']:0;
           if($error_id==1){
-            echo "<center><p>";
+            echo "<center><p class=' alert alert-danger'>";
             echo "$errors[$error_id]";
             echo "</p></center>";
           }
           elseif($error_id==2){
-            echo "<p>$errors[$error_id]</p>";
+            echo "<p class='text-danger'>$errors[$error_id]</p>";
           }
           ?>
           <div id="loginDiv">
@@ -74,11 +121,11 @@
               </ul>
 
               <div class="tab-content">
-                
+
                 <!-- STUDENT LOGIN -->
                 <div id="Student" class="tab-pane fade show active" role="tabpanel">
                   <br>
-                  <form action="login.php" method="post">
+                  <form action="loginTabs.php" method="post">
                     <input type="hidden" name="role" value="login"/>
                     <label for="Username" style="text-align:left">Username </label>
                     <input class="form-control" type="text" name="Username" placeholder="University ID">
@@ -93,7 +140,7 @@
                 <!-- COMPANY LOGIN -->
                 <div id="Admin" class="tab-pane fade" role="tabpanel">
                   <br>
-                  <form action="login.php" method="post">
+                  <form action="loginTabs.php" method="post">
                     <input type="hidden" name="role" value="AdminLogin"/>
                     <label for="Username" style="text-align:left">Username </label>
                     <input class="form-control" type="text" name="Username" placeholder="Admin ID">

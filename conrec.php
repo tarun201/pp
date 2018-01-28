@@ -1,7 +1,11 @@
 <?php
+session_start();
+if(!isset($_SESSION['logged_in']) || $_SESSION['logged_in']!=1 || $_SESSION['role']!= 'AdminLogin')
+  header('location: loginTabs.php?err=2');
+
 include 'connection.php';
 if(isset($_POST["submit"]))
-{ 
+{
 if(empty($_POST['slno']))
   {
     $slno='0000';
@@ -197,10 +201,8 @@ echo "Not saved, Please try again ";
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="login.php">Login</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="register.php">Register</a>
+            <a class="nav-link" href="logout.php">Logout
+            </a>
           </li>
         </ul>
       </div>
@@ -219,15 +221,15 @@ echo "Not saved, Please try again ";
  <form method="post" action="conrec.php">
   <div class="container">
     <div class="row">
-      
+
 <div class="form-group">
         <label>Sl.No.</label>
         <input type="text" id="slno" class="form-control" name="slno">
       </div>
-     
+
 <div class="container">
     <div class="row">
-      
+
 <div class="form-group ">
 <label>Date of Consent: <span class="text-danger">*</span></label>
         <input type="text" id="doc" class="form-control" name="doc" required>
@@ -242,7 +244,7 @@ echo "Not saved, Please try again ";
 <div class="row">
     <div class="container">
     <div class="row">
-      
+
 <div class="form-group ">
 <label>4 Digit Organisation Code: <span class="text-danger">*</span></label>
         <input type="text" id="orgc" class="form-control" name="orgc" required>
@@ -293,7 +295,7 @@ echo "Not saved, Please try again ";
         <label>Safety:</label>
         <input type="text" id="safety" class="form-control" name="safety">
       </div>
-      
+
 <div class="row">
 <div class="form-group ">
         <label>Insurance:</label>
@@ -390,7 +392,7 @@ echo "Not saved, Please try again ";
 <div class="form-group ">
         <label>Information Details:</label>
         <input type="text" id="info_dtl" class="form-control" name="info_dtl">
-      </div>  
+      </div>
 <div class="container">
 <div class="row">
 <div class="form-group ">
