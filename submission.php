@@ -41,6 +41,8 @@ if(isset($_POST['submit']))
   $result_details=mysqli_query($dbc,$fill_details) or die("error");
   echo "Succesful<br>This site is still under construction.
       Please be patient and wait for future updates<br>Thank You";
+  echo "<br>So lets Logout and go to Login page again";
+  echo "<br><a href='logout.php'>Click here</a>";
 
 
 }
