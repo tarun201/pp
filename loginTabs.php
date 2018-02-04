@@ -30,7 +30,7 @@ if(!empty($_POST['Username']))
       $_SESSION['logged_in']=1;
       if(isset($table_name)&& $table_name=='login')
       {
-        header('location: index.php');
+        header('location: sp.php');
       }
       elseif(isset($table_name)&& $table_name=='AdminLogin')
       {
@@ -83,7 +83,7 @@ if(!empty($_POST['Username']))
             </span>
 
             <li class="nav-item ">
-              <a class="nav-link" href="index.php">Home
+              <a class="nav-link" href="sp.php">Home
               </a>
             </li>
             <li class="nav-item active">

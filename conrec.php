@@ -173,7 +173,7 @@ echo "Not saved, Please try again ";
   <div class="container-fluid mb-2 mt-2">
     <div class="row">
       <div class="col-md-3">
-        <img class=" logo" src="logo/logo.png" alt="Presidency Logo">
+        <img class=" logo" src="assets/img/logo.png" alt="Presidency Logo">
       </div>
       <div class="col-md-6 text-center ">
         <h3>Presidency University,Bengaluru</h3>
@@ -196,7 +196,7 @@ echo "Not saved, Please try again ";
           </span>
 
           <li class="nav-item active">
-            <a class="nav-link" href="index.php">Home
+            <a class="nav-link" href="sp.php">Home
               <span class="sr-only">(current)</span>
             </a>
           </li>

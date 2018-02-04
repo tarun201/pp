@@ -51,7 +51,7 @@ $core_course=mysqli_fetch_array($result_course);
   <div class="container-fluid mb-2 mt-2">
     <div class="row">
       <div class="col-md-3">
-        <img class=" logo" src="logo/logo.png" alt="Presidency Logo">
+        <img class=" logo" src="assets/img/logo.png" alt="Presidency Logo">
       </div>
       <div class="col-md-6 text-center ">
         <h3>Presidency University,Bengaluru</h3>
