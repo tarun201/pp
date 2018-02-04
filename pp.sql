@@ -69,6 +69,30 @@ INSERT INTO `college_std_dtls` VALUES ('2015CSE1','student1','1996-04-01','CSE',
 UNLOCK TABLES;
 
 --
+-- Table structure for table `company_list`
+--
+
+DROP TABLE IF EXISTS `company_list`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `company_list` (
+  `sl_no` int(100) NOT NULL AUTO_INCREMENT,
+  `cmp_name` varchar(50) DEFAULT NULL,
+  PRIMARY KEY (`sl_no`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `company_list`
+--
+
+LOCK TABLES `company_list` WRITE;
+/*!40000 ALTER TABLE `company_list` DISABLE KEYS */;
+INSERT INTO `company_list` VALUES (1,'abc'),(2,'efg'),(3,'hij'),(4,'klm');
+/*!40000 ALTER TABLE `company_list` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `core_courses`
 --
 
@@ -153,7 +177,7 @@ CREATE TABLE `student_details` (
 
 LOCK TABLES `student_details` WRITE;
 /*!40000 ALTER TABLE `student_details` DISABLE KEYS */;
-INSERT INTO `student_details` VALUES ('2015CSE1','zc','2018-01-15','CSE1@gmail.com','1-1290034581','B+','12-1234567888','sa','as','a','nothing extra','nothing extra');
+INSERT INTO `student_details` VALUES ('2015CSE1','zc','2018-01-15','CSE1@gmail.com','1-1290034581','B+','12-1234567888','sa','as','a','nothing extra','nothing extra'),('2015CSE1','ss','2018-02-01','CSE1@gmail.com','12-1190034581','idk','123-1234567888','as','sa','nothing extra','nothing extra','nothing extra');
 /*!40000 ALTER TABLE `student_details` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -166,4 +190,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-01-28 20:57:10
+-- Dump completed on 2018-02-04 19:45:07

@@ -223,6 +223,7 @@ $core_course=mysqli_fetch_array($result_course);
           <option value="AB-">AB-</option>
           <option value="O+">O+</option>
           <option value="O-">O-</option>
+          <option value="idk">Don't Know</option>
         </select>
       </div>
 

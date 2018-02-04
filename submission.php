@@ -39,7 +39,8 @@ if(isset($_POST['submit']))
   $fill_details="insert into student_details values('$id','$address','$dob','$email_id',concat('$_POST[cc1]','-','$_POST[mobile_num]'),
                   '$bg',concat('$_POST[cc2]','-','$_POST[e_number]'),'$e_person','$relation','$skills','$lang','$other')";
   $result_details=mysqli_query($dbc,$fill_details) or die("error");
-  echo "Succesful";
+  echo "Succesful<br>This site is still under construction.
+      Please be patient and wait for future updates<br>Thank You";
 
 
 }

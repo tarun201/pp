@@ -51,7 +51,7 @@
     <div class="jumbotron">
     <fieldset>
         <center><legend>Login </legend></center>
-        <hr> <?php   
+        <hr> <?php
                             $errors=array(1=>"Invalid username and password, try again.",2=>"Please login to access this area");
                             $error_id=isset($_GET['err'])?(int)$_GET['err']:0;
                             if($error_id==1){
