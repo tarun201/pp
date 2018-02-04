@@ -232,7 +232,7 @@ $core_course=mysqli_fetch_array($result_course);
         <input type="text" id="e_person" class="form-control" name="e_person" placeholder="Enter the Person's Name.." required>
       </div>
       <div class="form-group">
-        <label for="relation">Realtion:<span class="text-danger">*</span></label>
+        <label for="relation">Relation:<span class="text-danger">*</span></label>
         <input type="text" id="relation" class="form-control" name="relation" placeholder="Enter relation with the Person.." required>
       </div>
       <div class="form-group">
