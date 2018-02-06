@@ -16,6 +16,33 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
+-- Table structure for table `2015cse1`
+--
+
+DROP TABLE IF EXISTS `2015cse1`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `2015cse1` (
+  `pref` int(3) NOT NULL AUTO_INCREMENT,
+  `cid` int(100) DEFAULT NULL,
+  `alloted` int(1) DEFAULT '0',
+  PRIMARY KEY (`pref`),
+  KEY `cid` (`cid`),
+  CONSTRAINT `2015cse1_ibfk_1` FOREIGN KEY (`cid`) REFERENCES `company_list` (`sl_no`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `2015cse1`
+--
+
+LOCK TABLES `2015cse1` WRITE;
+/*!40000 ALTER TABLE `2015cse1` DISABLE KEYS */;
+INSERT INTO `2015cse1` VALUES (4,4,0);
+/*!40000 ALTER TABLE `2015cse1` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `AdminLogin`
 --
 
@@ -190,4 +217,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-02-04 19:45:07
+-- Dump completed on 2018-02-06 17:56:52

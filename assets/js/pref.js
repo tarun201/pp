@@ -1,13 +1,14 @@
 $(document).ready(function(){
+  var arr;
   $("select").change(function()
   {
 
     $("select option").attr("disabled",""); //enable everything
 
     //collect the values from selected;
-    var  arr = $.map
+    arr = $.map
     (
-      $("select option:selected"), function(n)
+      $(":selected"), function(n)
       {
         return n.value;
       }
@@ -20,5 +21,10 @@ $(document).ready(function(){
       return $.inArray($(this).val(),arr)>-1;
     }).attr("disabled","disabled");
 
+  });
+
+  $("button").click(function(){
+    $("select option").attr("disabled",false);
+    $("select").val(1);
   });
 });

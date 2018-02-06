@@ -1,9 +1,11 @@
 <?php
 include 'connection.php';
 
-$query ="select cmp_name from company_list;";
+$query ="select * from company_list;";
 $result=mysqli_query($dbc,$query) or die("error1");
 $limit=mysqli_num_rows($result);
+
+
 
 ?>
 
@@ -79,32 +81,38 @@ $limit=mysqli_num_rows($result);
   </nav>
 
   <div class="container">
-    <table class="table text-center">
-      <thead>
-        <tr>
-          <th>Sl No.</th>
-          <th>Company Name</th>
-          <th>Preference No.</th>
-        </tr>
-      </thead>
-      <tbody>
-        <?php for ($i=1; $i<= $limit; $i++) {
-          $row=mysqli_fetch_array($result);?>
+    <form class="" action="pref_submit.php" method="post">
+      <table class="table text-center pre-scrollable">
+        <thead>
           <tr>
-            <td><?php echo $i ?></td>
-            <td><?php echo $row['cmp_name'] ?></td>
-            <td>
-              <select>
-                <?php for ($j=1; $j<= $limit; $j++) { ?>
-                  <option value="<?php echo $j ?>"><?php echo $j ?></option>
-                <?php } ?>
-
+            <th>Sl No.</th>
+            <th>Company Name</th>
+            <th>Preference No.</th>
+          </tr>
+        </thead>
+        <tbody>
+          <?php for ($i=1; $i<= $limit; $i++) {
+            $row=mysqli_fetch_array($result);?>
+            <tr>
+              <input type="hidden" name="cid" value="<?php echo $row['sl_no'] ?>">
+              <td><?php echo $i ?></td>
+              <td><?php echo $row['cmp_name'] ?></td>
+              <td>
+                <select name="<?php echo 'select'.$i ?>">
+                  <option value="0">select</option>
+                  <?php for ($j=1; $j<= $limit; $j++) { ?>
+                    <option value="<?php echo $j ?>"><?php echo $j ?></option>
+                  <?php } ?>
                 </select>
+
               </td>
             </tr>
-            <?php } ?>
-          </tbody>
-        </table>
+              <?php } ?>
+        </tbody>
+      </table>
+      <input type="submit" name="" value="Submit">
+    </form>
+        <button type="button" class="btn">Reset All</button>
       </div>
     </body>
     </html>
