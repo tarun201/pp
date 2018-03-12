@@ -9,16 +9,16 @@ if(!isset($_SESSION['logged_in']))
 include 'connection.php';
 if(isset($_POST['Username']))
 {
-  $Username=$_POST['Username'];
+  $Username=strtoupper($_POST['Username']);
   $college_details="select * from student_details where id = '$Username'";
   $result_college=mysqli_query($dbc,$college_details) or die("Error in querring college table");
   $clg_dtls=mysqli_fetch_array($result_college);
 }
 
-$form_username = isset($_POST['Username']) ? $_POST['Username'] : '';
+$form_username = isset($_POST['Username']) ? strtoupper($_POST['Username']) : '';
 $form_password = isset($_POST['Password']) ? $_POST['Password'] : '';
 $table_name = isset($_POST['role']) ? $_POST['role'] : '';
-$_SESSION['Username']=$form_username;
+$_SESSION['Username']=strtoupper($form_username);
 $_SESSION['role']=$table_name;
 
 if(!empty($_POST['Username']))
