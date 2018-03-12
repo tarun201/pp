@@ -22,9 +22,4 @@ $(document).ready(function(){
     }).attr("disabled","disabled");
 
   });
-
-  $("button").click(function(){
-    $("select option").attr("disabled",false);
-    $("select").val(1);
-  });
 });

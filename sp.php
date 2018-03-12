@@ -11,6 +11,7 @@ $college_details="select * from college_std_dtls where student_id = '$_SESSION[U
 $result_college=mysqli_query($dbc,$college_details)
                   or die("Error in querring college table");
 $clg_dtls=mysqli_fetch_array($result_college);
+$_SESSION['id']=$clg_dtls['student_id'];
 
 // receiving core courses of the student_id
 $course="select * from core_courses where branch_name='$clg_dtls[branch_name]'";

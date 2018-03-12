@@ -7,6 +7,14 @@ if(!isset($_SESSION['logged_in']))
 
 
 include 'connection.php';
+if(isset($_POST['Username']))
+{
+  $Username=$_POST['Username'];
+  $college_details="select * from student_details where id = '$Username'";
+  $result_college=mysqli_query($dbc,$college_details) or die("Error in querring college table");
+  $clg_dtls=mysqli_fetch_array($result_college);
+}
+
 $form_username = isset($_POST['Username']) ? $_POST['Username'] : '';
 $form_password = isset($_POST['Password']) ? $_POST['Password'] : '';
 $table_name = isset($_POST['role']) ? $_POST['role'] : '';
@@ -17,11 +25,10 @@ if(!empty($_POST['Username']))
 {
   $query = "SELECT * FROM $table_name where id ='$form_username' and password='$form_password'";
 
-  $result = mysqli_query($dbc, $query) or die("Failed to query from database. You are not eligible for industry practice");
+  $result = mysqli_query($dbc, $query) or die("Failed to query from database. You are not authorized");
   //COMMENT LINE BELOW IF USING 'loginTabs.php'
   $row = mysqli_fetch_array($result) or die(header('location:loginTabs.php?err=1'));
-  //COMMENT THE LINE BELOW IF USING 'loginDD.php'
-  // $row = mysqli_fetch_array($result) or die(header('location:loginTabs.php?err=1'));
+
 
   if(!empty($row['id']) && !empty($row['password']))
   {
@@ -30,7 +37,10 @@ if(!empty($_POST['Username']))
       $_SESSION['logged_in']=1;
       if(isset($table_name)&& $table_name=='login')
       {
-        header('location: sp.php');
+          if(mysqli_num_rows($result_college)==0)
+              header('location: sp.php');
+          else
+              header('location:SD.php');
       }
       elseif(isset($table_name)&& $table_name=='AdminLogin')
       {
@@ -42,6 +52,9 @@ if(!empty($_POST['Username']))
     else {
       header('location:loginTabs.php?err=1');
     }
+  }
+  else {
+    echo "Some error";
   }
 }
 ?>
@@ -106,7 +119,7 @@ if(!empty($_POST['Username']))
             echo "</p></center>";
           }
           elseif($error_id==2){
-            echo "<p class='text-danger'>$errors[$error_id]</p>";
+            echo "<center><p class='text-danger'>$errors[$error_id]</p></center>";
           }
           ?>
           <div id="loginDiv">
@@ -137,7 +150,7 @@ if(!empty($_POST['Username']))
                   </form>
                 </div>
 
-                <!-- COMPANY LOGIN -->
+                <!-- ADMIN LOGIN -->
                 <div id="Admin" class="tab-pane fade" role="tabpanel">
                   <br>
                   <form action="loginTabs.php" method="post">
