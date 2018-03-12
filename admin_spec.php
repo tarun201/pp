@@ -1,5 +1,8 @@
 <?php
 include 'connection.php';
+session_start();
+if(!isset($_SESSION['logged_in']) || $_SESSION['logged_in']!=1 || $_SESSION['role']!= 'AdminLogin')
+  header('location: login.php?err=2');;
 
 // receiving student details from college's database
 $college_details="select * from college_std_dtls where student_id = '2015CSE1'";
@@ -37,8 +40,8 @@ $core_course=mysqli_fetch_array($result_course);
 
   <style media="screen">
 .droptarget {
-    float: left; 
-    width: 100px; 
+    float: left;
+    width: 100px;
     height: 400px;
     margin: 15px;
     padding: 10px;
@@ -113,7 +116,7 @@ $core_course=mysqli_fetch_array($result_course);
       <div class="col-md-10">
         <h2 >Admin</h2>
       </div>
-      
+
     </div>
   </div>
   <div class="container">
@@ -127,7 +130,7 @@ $core_course=mysqli_fetch_array($result_course);
         <input type="text" name="company" value="">
       </div>
       <div class="form-group">
-        <input type="submit" name="submit" value="submit">	
+        <input type="submit" name="submit" value="submit">
       </div>
     </form>
   </div>

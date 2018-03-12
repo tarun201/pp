@@ -95,10 +95,7 @@ if(!empty($_POST['Username']))
             <span class="navbar-text text-light">
             </span>
 
-            <li class="nav-item ">
-              <a class="nav-link" href="sp.php">Home
-              </a>
-            </li>
+            
             <li class="nav-item active">
               <a class="nav-link" href="login.php">Login
 

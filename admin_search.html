@@ -1,5 +1,8 @@
 <?php
 include 'connection.php';
+session_start();
+if(!isset($_SESSION['logged_in']) || $_SESSION['logged_in']!=1 || $_SESSION['role']!= 'AdminLogin')
+  header('location: login.php?err=2');
 
 // receiving student details from college's database
 $college_details="select * from college_std_dtls where student_id = '2015CSE1'";

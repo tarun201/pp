@@ -57,7 +57,7 @@ $result_college=mysqli_query($dbc,$college_details) or die("Error in querring co
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ml-auto">
                         <span class="navbar-text text-light"> </span>
-                        
+
                         <li class="nav-item">
                             <a class="nav-link" href="logout.php">Logout </a>
                         </li>
@@ -144,6 +144,10 @@ $result_college=mysqli_query($dbc,$college_details) or die("Error in querring co
                             </tr>
                     </tbody>
                 </table>
+                <a href="preference.php">
+                  <button type="button" name="button" class="btn btn-primary">Next</button>
+                </a>
+
             </div>
         </div>
 
