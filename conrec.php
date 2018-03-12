@@ -1,7 +1,7 @@
 <?php
 session_start();
 if(!isset($_SESSION['logged_in']) || $_SESSION['logged_in']!=1 || $_SESSION['role']!= 'AdminLogin')
-  header('location: loginTabs.php?err=2');
+  header('location: login.php?err=2');
 
 include 'connection.php';
 if(isset($_POST["submit"]))

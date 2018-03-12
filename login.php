@@ -26,8 +26,8 @@ if(!empty($_POST['Username']))
   $query = "SELECT * FROM $table_name where id ='$form_username' and password='$form_password'";
 
   $result = mysqli_query($dbc, $query) or die("Failed to query from database. You are not authorized");
-  //COMMENT LINE BELOW IF USING 'loginTabs.php'
-  $row = mysqli_fetch_array($result) or die(header('location:loginTabs.php?err=1'));
+  //COMMENT LINE BELOW IF USING 'login.php'
+  $row = mysqli_fetch_array($result) or die(header('location:login.php?err=1'));
 
 
   if(!empty($row['id']) && !empty($row['password']))
@@ -50,7 +50,7 @@ if(!empty($_POST['Username']))
       //     header('location:index.html');
     }
     else {
-      header('location:loginTabs.php?err=1');
+      header('location:login.php?err=1');
     }
   }
   else {
@@ -100,7 +100,7 @@ if(!empty($_POST['Username']))
               </a>
             </li>
             <li class="nav-item active">
-              <a class="nav-link" href="loginTabs.php">Login
+              <a class="nav-link" href="login.php">Login
 
                 <span class="sr-only">(current)</span></a>
               </li>
@@ -138,7 +138,7 @@ if(!empty($_POST['Username']))
                 <!-- STUDENT LOGIN -->
                 <div id="Student" class="tab-pane fade show active" role="tabpanel">
                   <br>
-                  <form action="loginTabs.php" method="post">
+                  <form action="login.php" method="post">
                     <input type="hidden" name="role" value="login"/>
                     <label for="Username" style="text-align:left">Username </label>
                     <input class="form-control" type="text" name="Username" placeholder="University ID">
@@ -153,7 +153,7 @@ if(!empty($_POST['Username']))
                 <!-- ADMIN LOGIN -->
                 <div id="Admin" class="tab-pane fade" role="tabpanel">
                   <br>
-                  <form action="loginTabs.php" method="post">
+                  <form action="login.php" method="post">
                     <input type="hidden" name="role" value="AdminLogin"/>
                     <label for="Username" style="text-align:left">Username </label>
                     <input class="form-control" type="text" name="Username" placeholder="Admin ID">
