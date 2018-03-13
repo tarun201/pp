@@ -30,16 +30,16 @@ $core_course=mysqli_fetch_array($result_course);
 
   <title>Student Profile</title>
   <!-- Latest compiled and minified CSS -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 
-  <!-- jQuery library -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
-  <!-- Popper JS -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<!-- Popper JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
 
-  <!-- Latest compiled JavaScript -->
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 
   <!-- JavaScript for this page -->
   <script src="assets/js/sp.js">  </script>
@@ -74,7 +74,7 @@ $core_course=mysqli_fetch_array($result_course);
         <ul class="navbar-nav ml-auto">
           <span class="navbar-text text-light">
           </span>
-          
+
           <li class="nav-item">
             <a class="nav-link" href="logout.php">Logout
             </a>
@@ -201,7 +201,9 @@ $core_course=mysqli_fetch_array($result_course);
 
       <div class="form-group">
         <div class="input-group">
-            <span id="mobile_error" class="input-group-addon">Mobile Number:<span class="text-danger">*</span></span>
+          <div class="input-group-prepend">
+            <span id="mobile_error" class="input-group-text">Mobile Number:<span class="text-danger">*</span></span>
+          </div>
           <input type="text" class="form-control" name="cc1" placeholder="Country code" maxlength="4" required>
           <input type="text" class="form-control" id="mobile_num" name="mobile_num" value="<?php  echo $clg_dtls['mobile_num']?>" maxlength="10" required>
         </div>
@@ -234,7 +236,9 @@ $core_course=mysqli_fetch_array($result_course);
       </div>
       <div class="form-group">
         <div class="input-group">
-          <span id="e_mob_error" class="input-group-addon">Emergency Number:<span class="text-danger">*</span></span>
+          <div class="input-group-prepend">
+            <span id="e_mob_error" class="input-group-text">Emergency Number:<span class="text-danger">*</span></span>
+          </div>
           <input type="text" class="form-control" name="cc2" placeholder="Country code" maxlength="4" required>
           <input type="text" id="e_number" class="form-control" name="e_number" placeholder="Enter the Person's Number.." maxlength="10" required>
         </div>

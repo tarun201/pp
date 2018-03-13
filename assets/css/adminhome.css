@@ -1,0 +1,26 @@
+body{
+  margin-bottom: 150px;
+}
+
+img.logo{
+  width: 40%;
+}
+
+nav{
+  background-color: #283955;
+}
+footer{
+  background-color: #283955;
+}
+
+h2.text-center{
+  margin-top: 10px;
+}
+
+div.jumbotron{
+  margin-top:30px;
+  padding: 25px;
+  border-radius:15px;
+  width: 40%;
+  float: center;
+}

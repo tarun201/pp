@@ -44,7 +44,7 @@ if(!empty($_POST['Username']))
       }
       elseif(isset($table_name)&& $table_name=='AdminLogin')
       {
-        header('location: conrec.php');
+        header('location: comp_req.php');
       }
       // elseif(isset($table_name)&& $table_name=='teachers_login')
       //     header('location:index.html');
@@ -95,7 +95,7 @@ if(!empty($_POST['Username']))
             <span class="navbar-text text-light">
             </span>
 
-            
+
             <li class="nav-item active">
               <a class="nav-link" href="login.php">Login
 

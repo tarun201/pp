@@ -132,18 +132,19 @@ echo "Not saved, Please try again ";
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Index</title>
+  <title>Company requirements</title>
+
   <!-- Latest compiled and minified CSS -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 
-  <!-- jQuery library -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
-  <!-- Popper JS -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<!-- Popper JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
 
-  <!-- Latest compiled JavaScript -->
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 
   <style media="screen">
 
@@ -195,10 +196,16 @@ echo "Not saved, Please try again ";
           <span class="navbar-text text-light">
           </span>
 
-          <li class="nav-item active">
-            <a class="nav-link" href="sp.php">Home
+          <li class="nav-item ">
+            <a class="nav-link" href="admin_home.php">Home
               <span class="sr-only">(current)</span>
             </a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="comp_req.php">CR</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="admin_remove.php">Remove</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="logout.php">Logout

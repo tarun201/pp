@@ -27,18 +27,21 @@ $core_course=mysqli_fetch_array($result_course);
 
   <title>Index</title>
   <!-- Latest compiled and minified CSS -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 
-  <!-- jQuery library -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
-  <!-- Popper JS -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<!-- Popper JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
 
-  <!-- Latest compiled JavaScript -->
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 
   <style media="screen">
+  body{
+    margin-bottom: 150px;
+  }
 .droptarget {
     float: left;
     width: 100px;
@@ -73,7 +76,7 @@ $core_course=mysqli_fetch_array($result_course);
   <div class="container-fluid mb-2 mt-2">
     <div class="row">
       <div class="col-md-3">
-        <img class=" logo" src="logo/logo.png" alt="Presidency Logo">
+        <img class=" logo" src="assets/img/logo.png" alt="Presidency Logo">
       </div>
       <div class="col-md-6 text-center ">
         <h3>Presidency University,Bengaluru</h3>
@@ -96,7 +99,7 @@ $core_course=mysqli_fetch_array($result_course);
           </span>
 
           <li class="nav-item active">
-            <a class="nav-link" href="index.php">Home
+            <a class="nav-link" href="admin_home.php">Home
               <span class="sr-only">(current)</span>
             </a>
           </li>
@@ -137,7 +140,7 @@ $core_course=mysqli_fetch_array($result_course);
 </div>
 <! admin can assign company to student who brought that company >
   <!-- Footer -->
-  <footer class="py-5 ">
+  <footer class="py-5 fixed-bottom">
     <div class="container">
       <p class="m-0 text-center text-white">Copyright &copy; Presidency University 2018</p>
     </div>
