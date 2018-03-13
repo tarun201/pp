@@ -44,7 +44,7 @@ if(!empty($_POST['Username']))
       }
       elseif(isset($table_name)&& $table_name=='AdminLogin')
       {
-        header('location: comp_req.php');
+        header('location: admin_home.php');
       }
       // elseif(isset($table_name)&& $table_name=='teachers_login')
       //     header('location:index.html');
