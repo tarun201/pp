@@ -77,7 +77,7 @@
   </nav>
 
   <!-- Body -->
-  <div class="container">
+  <div class="container" id="display">
     <h2 class="text-center">Welcome Admin</h2>
     <div class="jumbotron mx-auto">
       <fieldset>
@@ -95,7 +95,7 @@
 
 
 <!-- Footer -->
-<footer class="py-5 fixed-bottom">
+<footer class="py-5">
   <div class="container">
     <p class="m-0 text-center text-white">Copyright &copy; Presidency University 2018</p>
   </div>

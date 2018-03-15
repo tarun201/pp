@@ -1,5 +1,9 @@
 body{
-  margin-bottom: 150px;
+
+}
+
+#display{
+  height: 400px;
 }
 
 img.logo{
@@ -15,6 +19,7 @@ footer{
 
 h2.text-center{
   margin-top: 10px;
+  margin-bottom: 10PX;
 }
 
 div.jumbotron{

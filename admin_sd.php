@@ -99,7 +99,7 @@
 
 
 <!-- Footer -->
-<footer class="py-5 fixed-bottom">
+<footer class="py-5">
   <div class="container">
     <p class="m-0 text-center text-white">Copyright &copy; Presidency University 2018</p>
   </div>

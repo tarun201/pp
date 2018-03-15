@@ -1,5 +1,4 @@
 body{
-  margin-bottom: 150px;
 }
 
 img.logo{
@@ -11,4 +10,8 @@ nav{
 }
 footer{
   background-color: #283955;
+}
+
+#display1{
+  height: 800px;;
 }

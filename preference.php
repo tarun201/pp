@@ -41,7 +41,7 @@ $core_course=mysqli_fetch_array($result_course);
   <style media="screen">
 .droptarget {
     float: left;
-    width: 800px;
+    width: 500px;
     height: 500px;
     margin: 15px;
     padding: 10px;
