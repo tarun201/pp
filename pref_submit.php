@@ -18,7 +18,10 @@ for($i=1;$i<=$limit;$i++){
   $result_insert=mysqli_query($dbc,$query_insert) or die("Error submitting<br>".mysqli_error($dbc));
 }
 
-echo "<script>alert('Preference Form submitted');window.location.assign('SD.php');</script>";
+echo "<p>Preference Form submitted</p><br />";
+echo "<p>Details of the alloted company list will be updated soon</p><br />";
+echo "<p>Thank You</p><br />";
+echo "<a href='logout.php'>Logout</a>";
 
 
  ?>

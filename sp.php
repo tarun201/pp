@@ -256,6 +256,12 @@ $core_course=mysqli_fetch_array($result_course);
         <textarea name="other" id="other" class="form-control" rows="3" placeholder="Write it here..."></textarea>
       </div>
       <div class="form-group">
+        <label>
+        <input type="checkbox" id="checkbox" name="checkbox" required><span class="text-danger"> *</span>
+        I have read the <a href="undertaking.html" target="_blank">Undertaking</a> and agree to it
+        </label>
+      </div>
+      <div class="form-group">
         <input type="submit" name="submit" value="Save Details">
       </div>
     </form>

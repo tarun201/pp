@@ -112,17 +112,9 @@ $rol = $_POST['rol'];
 $oob = $_POST['oob'];
 $db = mysqli_connect('localhost', 'root', '123456', 'pp')or die('Error connecting to MySQL server.');
 $query = "INSERT INTO consent_rec(slno,doc,org,orgc,nsc,now,gender,branch,skill,dress_code,safety,insurance,others,address,website,bd,cgb,email_id,phno,spoc,spoc_e,spoc_ph,ovb,max_stu,rol,oob,info_dtl,dtl_comm,by_per,dc)  VALUES('$slno','$doc','$org','$orgc','$nsc','$now','$gender','$branch','$skill','$dress_code','$safety','$insurance','$others','$address','$website','$bd','$cgb','$email_id','$phno','$spoc','$spoc_e','$spoc_ph','$ovb','$max_stu','$rol','$oob','$info_dtl','$dtl_comm','$by_per','$dc')";
- $resul = mysqli_query($db,$query)or die("error");
+ $resul = mysqli_query($db,$query)or die("error<br>".mysqli_error($dbc));
 
-if($resul)
-{
-echo "Successfully saved";
-}
-else
-{
-echo "Not saved, Please try again ";
-}
-}
+echo "<script>alert('Succesfully Saved');window.location.assign('admin_home.php');</script>";
 ?>
 
 

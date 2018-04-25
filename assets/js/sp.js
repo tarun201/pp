@@ -43,4 +43,14 @@ function validate()
     document.getElementById("bg_error").className="d-block alert alert-danger";
     return false;
   }
+
+  // Get the checkbox
+  var checkBox = document.getElementById("checkbox");
+
+  // If the checkbox is checked
+  if (checkBox.checked != true)
+  {
+    document.myform.bg.focus();
+    return false;
+  }
 }
