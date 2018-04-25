@@ -158,7 +158,7 @@ $result_college2=mysqli_query($dbc,$college_details2) or die("Error in querring 
                             </tr>
                     </tbody>
                 </table>
-                <a href="preference.php">
+                <a href="pref.php">
                   <button type="button" name="button" class="btn btn-primary">Next</button>
                 </a>
 

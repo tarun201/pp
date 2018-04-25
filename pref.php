@@ -34,7 +34,7 @@ $limit=mysqli_num_rows($result);
   <link rel="stylesheet" href="assets/css/pref.css">
 
   <!-- JQuery for this page -->
-  <script src="assets/js/pref.js">  </script>
+  <!-- <script src="assets/js/pref.js">  </script> -->
 
 
 </head>
@@ -95,7 +95,7 @@ $limit=mysqli_num_rows($result);
           <?php for ($i=1; $i<= $limit; $i++) {
             $row=mysqli_fetch_array($result);?>
             <tr>
-              <input type="hidden" name="cid" value="<?php echo $row['sl_no'] ?>">
+              <input type="hidden" name="<?php echo 'cid'.$i ?>" value="<?php echo $row['sl_no'] ?>">
               <td><?php echo $i ?></td>
               <td><?php echo $row['cmp_name'] ?></td>
               <td>
@@ -114,7 +114,7 @@ $limit=mysqli_num_rows($result);
       </table>
       <input type="submit" name="" value="Submit">
     </form>
-        <button type="button" class="btn">Reset All</button>
+        <!-- <button type="button" class="btn">Reset All</button> -->
       </div>
     </body>
     </html>
