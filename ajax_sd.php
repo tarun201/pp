@@ -5,6 +5,9 @@ $Username = $_POST['id'] ;
 $college_details="select * from student_details where id = '$Username'";
 $result_college=mysqli_query($dbc,$college_details) or die("Error in querring college table");
 
+$college_details2="select * from college_std_dtls where student_id = '$Username'";
+$result_college2=mysqli_query($dbc,$college_details2) or die("Error in querring college table<br>".mysqli_error($dbc));
+
 if(mysqli_num_rows($result_college)==0){
   echo "<p class='alert alert-danger lead text-center'>Student didn't fill the form yet</p>";
 }
@@ -23,23 +26,29 @@ border-radius: 15px;">
         <tbody>
             <?php
 
-              $clg_dtls=mysqli_fetch_array($result_college) ?>
+              $clg_dtls=mysqli_fetch_array($result_college);
+              $clg_dtls2=mysqli_fetch_array($result_college2);
+               ?>
                 <tr>
                     <th scope="row" class="text-left">ID Number</th>
                     <td class="text-left"><?php echo $clg_dtls['id']; ?></td>
                 </tr>
-                <!-- <tr>
+                <tr>
                     <th scope="row" class="text-left">Name</th>
-                    <td class="text-left"><?php echo $clg_dtls['name']; ?></td>
-                </tr> -->
+                    <td class="text-left"><?php echo $clg_dtls2['name']; ?></td>
+                </tr>
+                <tr>
+                <td class="text-left"><b>Branch</b></td>
+                <td class="text-left"><?php echo $clg_dtls2['branch_name']; ?></td>
+                </tr>
+                <tr>
+                    <th scope="row" class="text-left">Gender</th>
+                    <td class="text-left"><?php echo $clg_dtls2['gender']; ?></td>
+                </tr>
                 <tr>
                     <td class="text-left"><b>Date of Birth</b></td>
                     <td class="text-left"><?php echo $clg_dtls['dob']; ?></td>
                 </tr>
-                <!-- <tr>
-                    <td class="text-left"><b>Branch Name</b></td>
-                    <td class="text-left"><?php echo $clg_dtls['branch_name']; ?></td>
-                </tr> -->
                 <tr>
                     <td class="text-left"><b>Mobile Number</b></td>
                     <td class="text-left"><?php echo $clg_dtls['mobile_num']; ?></td>

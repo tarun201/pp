@@ -85,8 +85,8 @@
       </fieldset>
       <ol>
         <li><a href="comp_req.php">Add Company requirements</a></li>
-        <li><a href="admin_remove.php">Remove</a></li>
-        <li><a href="admin_spec.php">Spec</a></li>
+        <!-- <li><a href="admin_remove.php">Remove</a></li>
+        <li><a href="admin_spec.php">Spec</a></li> -->
         <li><a href="admin_sd.php">View  student details</a></li>
 
       </ol>

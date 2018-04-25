@@ -91,6 +91,7 @@ $limit=mysqli_num_rows($result);
           </tr>
         </thead>
         <tbody>
+          <!-- Loop to display company name -->
           <?php for ($i=1; $i<= $limit; $i++) {
             $row=mysqli_fetch_array($result);?>
             <tr>
@@ -100,6 +101,7 @@ $limit=mysqli_num_rows($result);
               <td>
                 <select name="<?php echo 'select'.$i ?>">
                   <option value="0">select</option>
+                  <!-- Loop to display dropdown -->
                   <?php for ($j=1; $j<= $limit; $j++) { ?>
                     <option value="<?php echo $j ?>"><?php echo $j ?></option>
                   <?php } ?>

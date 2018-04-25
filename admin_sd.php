@@ -92,14 +92,14 @@
     </div>
 
   </div>
-  <div class="container" id="display1">
+  <div class="container" id="display1" style="height:1000px;">
 
 
   </div>
 
 
 <!-- Footer -->
-<footer class="py-5">
+<footer class="py-5 ">
   <div class="container">
     <p class="m-0 text-center text-white">Copyright &copy; Presidency University 2018</p>
   </div>
